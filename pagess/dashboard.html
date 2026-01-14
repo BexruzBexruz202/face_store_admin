@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h2 class="logo">Admin</h2>
+        <ul class="menu">
+          <li class="active">Dashboard</li>
+          <li>Users</li>
+          <li id="productsBtn">Products</li>
+          <li>Carts</li>
+        </ul>
+        <button class="logout">Logout</button>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <h1>Products</h1>
+          <button id="addProductBtn">+ Add Product</button>
+        </header>
+
+        <section class="content">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal hidden" id="modal">
+      <div class="modal-box">
+        <h3 id="modalTitle">Add Product</h3>
+        <input type="text" id="title" placeholder="Title" />
+        <input type="number" id="price" placeholder="Price" />
+        <button id="saveProduct">Save</button>
+        <button class="close">Cancel</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../utils/dashboard.js"></script>
+  </body>
+</html>
