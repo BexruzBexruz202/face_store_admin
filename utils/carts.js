@@ -1,4 +1,4 @@
-const API = "https://fakestoreapi.com/products";
+const API = "https://fakestoreapi.com/carts";
 const productList = document.getElementById("productList");
 const modal = document.getElementById("modal");
 const titleInput = document.getElementById("title");
@@ -9,10 +9,8 @@ let editId = null;
 
 elLogout.addEventListener("click", () => {
   localStorage.removeItem("token");
-  window.location.href = "../index.html";
+  window.location.href = "../carts.html";
 });
-
-
 
 function loadProducts() {
   axios.get(API).then((res) => {

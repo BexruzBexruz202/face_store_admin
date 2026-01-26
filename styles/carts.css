@@ -36,11 +36,6 @@ body {
   border-radius: 8px;
 }
 
-a{
-  text-decoration: none;
-  color: black;
-}
-
 .menu li:hover,
 .menu .active {
   background: #e0e0e0;
@@ -140,4 +135,9 @@ tr:hover {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }

@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../styles/carts.css" />
   </head>
   <body>
     <div class="layout">
       <aside class="sidebar">
         <h2 class="logo">Admin</h2>
         <ul class="menu">
-          <li><a href="../pagess/users.html">Users</a></li>
-          <li id="productsBtn">Products</li>
-          <li class="cartsBtn"><a href="../pagess/carts.html">Carts</a></li>
+          <li class="active">Carts</li>
+          <li><a href="../pagess/dashboard.html">Products</a></li>
+          <li id="productsBtn"><a href="../pagess/users.html">Users</a></li>
         </ul>
         <button class="logout">Logout</button>
       </aside>
@@ -49,6 +49,6 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../utils/dashboard.js"></script>
+    <script src="../utils/carts.js"></script>
   </body>
 </html>
