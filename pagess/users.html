@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Fake Store Users</title>
   <link rel="stylesheet" href="../styles/users.css">
 </head>
+
 <body>
-    <button><a href="../pagess/dashboard.html">--- Back</a></button>
+  <div class="container">
+    <aside class="sidebar">
+      <h2 class="logo">Admin</h2>
 
-  <h1>Users</h1>
+      <ul class="menu">
+        <li class="active"><a href="users.html">Users</a></li>
+        <li><a href="dashboard.html">Products</a></li>
+        <li><a href="carts.html">Carts</a></li>
+      </ul>
 
-  <div id="users" class="users"></div>
+      <button class="logout">Logout</button>
+    </aside>
+
+    <h1>Users</h1>
+
+    <div id="users" class="users"></div>
+  </div>
 
   <script src="../utils/users.js"></script>
 </body>
+
 </html>

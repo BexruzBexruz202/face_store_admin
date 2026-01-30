@@ -1,70 +1,76 @@
 const API = "https://fakestoreapi.com/carts";
-const productList = document.getElementById("productList");
+const cartList = document.getElementById("cartList");
 const modal = document.getElementById("modal");
-const titleInput = document.getElementById("title");
-const priceInput = document.getElementById("price");
-const elLogout = document.querySelector(".logout");
-
+const userIdInput = document.getElementById("userId");
+const dateInput = document.getElementById("date");
 let editId = null;
 
-elLogout.addEventListener("click", () => {
-  localStorage.removeItem("token");
-  window.location.href = "../carts.html";
-});
+document.querySelector(".logout__btn").onclick = () => {
+  localStorage.clear();
+  location.href = "/pages/index.html";
+};
 
-function loadProducts() {
-  axios.get(API).then((res) => {
-    const data = res.data;
-    productList.innerHTML = "";
-    data.slice(0, 15).forEach((p) => {
-      productList.innerHTML += `
-          <tr>
-            <td>${p.id}</td>
-            <td>${p.title}</td>
-            <td>$${p.price}</td>
-            <td class="actions">
-              <button class="edit" onclick="editProduct(${p.id}, '${p.title}', ${p.price})">Edit</button>
-              <button class="delete" onclick="deleteProduct(${p.id})">Delete</button>
-            </td>
-          </tr>
-        `;
+function fetchCarts() {
+  axios.get(API).then(({ data }) => {
+    cartList.innerHTML = "";
+
+    data.slice(0, 10).forEach((cart) => {
+      const tr = document.createElement("tr");
+
+      tr.innerHTML = `
+        <td>${cart.id}</td>
+        <td>${cart.userId}</td>
+        <td>${new Date(cart.date).toLocaleDateString()}</td>
+        <td>${cart.products.length}</td>
+        <td class="actions">
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
+        </td>
+      `;
+
+      tr.querySelector(".edit").addEventListener("click", () => editCart(cart));
+
+      tr.querySelector(".delete").addEventListener("click", () =>
+        deleteCart(cart.id),
+      );
+
+      cartList.appendChild(tr);
     });
   });
 }
-loadProducts();
 
-document.getElementById("addProductBtn").onclick = () => {
+fetchCarts();
+
+function editCart(cart) {
   modal.classList.remove("hidden");
-  editId = null;
-  titleInput.value = "";
-  priceInput.value = "";
-};
+  editId = cart.id;
 
-document.getElementById("saveProduct").onclick = () => {
-  const product = {
-    title: titleInput.value,
-    price: priceInput.value,
+  userIdInput.value = cart.userId;
+  dateInput.value = cart.date;
+  productCountInput.value = cart.products.length;
+}
+
+document.getElementById("saveCart").onclick = () => {
+  const count = Number(productCountInput.value);
+
+  const updatedCart = {
+    userId: Number(userIdInput.value),
+    date: dateInput.value,
+    products: Array.from({ length: count }, (_, i) => ({
+      productId: i + 1,
+      quantity: 1,
+    })),
   };
 
-  if (editId) {
-    axios.put(`${API}/${editId}`, product).then(() => loadProducts());
-  } else {
-    axios.post(API, product).then(() => loadProducts());
-  }
-
-  modal.classList.add("hidden");
+  axios.put(`${API}/${editId}`, updatedCart).then(() => {
+    modal.classList.add("hidden");
+    fetchCarts();
+  });
 };
-
-function editProduct(id, title, price) {
-  modal.classList.remove("hidden");
-  titleInput.value = title;
-  priceInput.value = price;
-  editId = id;
+function deleteCart(id) {
+  axios.delete(`${API}/${id}`).then(fetchCarts);
 }
 
-function deleteProduct(id) {
-  axios.delete(`${API}/${id}`).then(() => loadProducts());
-}
-document.querySelector(".close").onclick = () => {
+document.getElementById("close").onclick = () => {
   modal.classList.add("hidden");
 };

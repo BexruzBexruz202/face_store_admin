@@ -1,4 +1,5 @@
 const elUsers = document.querySelector("#users");
+const elLogout = document.querySelector(".logout");
 
 fetch("https://fakestoreapi.com/users")
   .then(res => res.json())
@@ -13,13 +14,18 @@ function renderUsers(users) {
     div.className = "user";
 
     div.innerHTML = `
-      <h3>${user.name.firstname} ${user.name.lastname}</h3>
-      <p><b>Username:</b> ${user.username}</p>
-      <p><b>Email:</b> ${user.email}</p>
-      <p><b>Phone:</b> ${user.phone}</p>
-      <p><b>City:</b> ${user.address.city}</p>
+      <h3 class = "users_text">${user.name.firstname} ${user.name.lastname}</h3>
+      <p class = "users_text"><b>Username:</b> ${user.username}</p>
+      <p class = "users_text"><b>Email:</b> ${user.email}</p>
+      <p class = "users_text"><b>Phone:</b> ${user.phone}</p>
+      <p class = "users_text"><b>City:</b> ${user.address.city}</p>
     `;
 
     elUsers.appendChild(div);
   });
 }
+
+elLogout.addEventListener("click", () => {
+  localStorage.removeItem("token");
+  window.location.href = "../index.html";
+});
