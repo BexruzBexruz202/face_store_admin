@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #0f1115;
+  background: gray;
   color: #e6e6e6;
 }
 
@@ -17,7 +17,7 @@ body {
 
 .sidebar {
   width: 240px;
-  background: #151820;
+  background: black;
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
@@ -58,20 +58,21 @@ body {
 .logout {
   margin-top: auto;
   border: none;
-  background: #1f2430;
+  background: red;
   border-radius: 8px;
   padding: 10px;
-  color: #ff6b6b;
+  color: white;
   cursor: pointer;
 }
 
 .logout:hover {
-  background: #2a3140;
+  background: #af3741;
 }
 
 .main {
   flex: 1;
   padding: 30px 40px;
+  background: #1f2430;
 }
 
 .topbar {
@@ -100,7 +101,7 @@ body {
 }
 
 .content {
-  background: #151820;
+  background: rgb(82, 79, 79);
   border-radius: 14px;
   padding: 20px;
 }

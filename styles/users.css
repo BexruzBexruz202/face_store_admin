@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #0f1115;
+  background: gray;
   color: #e6e6e6;
 }
 
@@ -17,12 +17,12 @@ body {
 
 .sidebar {
   width: 240px;
-  background: #151820;
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   border-right: 1px solid #1f2430;
+  background: #151820;
 }
 
 .logo {
@@ -77,6 +77,8 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
+
+  background: rgb(82, 79, 79);
 }
 
 .user-card {
