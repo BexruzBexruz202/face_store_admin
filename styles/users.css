@@ -2,105 +2,104 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: Inter, Arial, sans-serif;
 }
 
 body {
-  background: gray;
-  color: #e6e6e6;
+  background: #f4f6f8;
 }
 
-.container {
+.layout {
   display: flex;
   min-height: 100vh;
 }
 
 .sidebar {
   width: 240px;
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  border-right: 1px solid #1f2430;
-  background: #151820;
+  background: #1e293b;
+  color: #fff;
+  padding: 20px;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #f5c518;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 
-.menu {
+.sidebar__ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
-.menu li a {
-  display: block;
-  padding: 10px 14px;
-  border-radius: 8px;
-  color: #cfcfcf;
+.sidebar__ul a {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  color: #cbd5e1;
   text-decoration: none;
 }
 
-.menu li a:hover,
-.menu li.active a {
-  background: #1f2430;
-  color: #ffffff;
+.sidebar__ul a:hover {
+  background: #334155;
+  color: #fff;
 }
 
-.logout {
+.logout__btn {
   margin-top: auto;
+  width: 100%;
+  height: 44px;
+  background: #ef4444;
+  color: #fff;
   border: none;
-  background: #1f2430;
-  border-radius: 8px;
-  padding: 10px;
-  color: #ff6b6b;
+  border-radius: 6px;
+}
+
+.dashboard {
+  flex: 1;
+  padding: 24px;
+}
+
+table {
+  width: 100%;
+  background: #fff;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #f1f5f9;
+  padding: 14px;
+}
+
+td {
+  padding: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.edit,
+.delete {
+  height: 44px;
+  padding: 0 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
   cursor: pointer;
 }
 
-.logout:hover {
-  background: #2a3140;
+.edit {
+  background: #f59e0b;
+  color: #fff;
 }
 
-h1 {
-  padding: 30px 40px;
-  font-size: 28px;
+.delete {
+  background: #ef4444;
+  color: #fff;
 }
 
-.users {
-  flex: 1;
-  padding: 0 40px 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
-
-  background: rgb(82, 79, 79);
-}
-
-.user-card {
-  background: #151820;
-  border-radius: 14px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.user-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-}
-
-.user-card h3 {
-  font-size: 18px;
-}
-
-.user-card p {
-  font-size: 14px;
-  color: #bfbfbf;
+a{
+  text-decoration: none;
+  color: white;
 }

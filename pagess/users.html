@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Fake Store Users</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Store Admin - Users</title>
   <link rel="stylesheet" href="../styles/users.css">
 </head>
-
 <body>
-  <div class="container">
+  <div class="layout">
     <aside class="sidebar">
       <h2 class="logo">Admin</h2>
-
-      <ul class="menu">
-        <li class="active"><a href="users.html">Users</a></li>
-        <li><a href="dashboard.html">Products</a></li>
+      <ul class="sidebar__ul">
+        <li><a href="../pagess/dashboard.html">Products</a></li>
+        <li><a href="users.html">Users</a></li>
         <li><a href="carts.html">Carts</a></li>
       </ul>
-
-      <button class="logout">Logout</button>
+      <button class="logout__btn">Logout</button>
     </aside>
 
-    <h1>Users</h1>
+    <main class="dashboard">
+      <header class="dashboard__header">
+        <h1 class="dashboard__title">Users</h1>
+      </header>
 
-    <div id="users" class="users"></div>
+      <div class="table__container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody id="productList"></tbody>
+        </table>
+      </div>
+    </main>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="../utils/users.js"></script>
 </body>
-
 </html>

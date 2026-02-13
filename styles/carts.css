@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, Arial, sans-serif;
 }
 
 body {
-  background: gray;
-  color: #e6e6e6;
+  background: #f4f6f8;
 }
 
 .layout {
@@ -17,145 +16,111 @@ body {
 
 .sidebar {
   width: 240px;
-  background: #151820;
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  border-right: 1px solid #1f2430;
+  background: #1e293b;
+  color: #fff;
+  padding: 20px;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #f5c518;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 
 .sidebar__ul {
   list-style: none;
+}
+
+.sidebar__ul a {
+  height: 44px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.sidebar__li a {
-  display: block;
-  padding: 10px 14px;
-  border-radius: 8px;
-  color: #cfcfcf;
+  align-items: center;
+  padding: 0 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  color: #cbd5e1;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
 }
 
-.sidebar__li a:hover {
-  background: #1f2430;
-  color: #ffffff;
+.sidebar__ul a:hover {
+  background: #334155;
+  color: #fff;
 }
 
 .logout__btn {
   margin-top: auto;
+  width: 100%;
+  height: 44px;
+  background: #ef4444;
+  color: #fff;
   border: none;
-  background: red;
-  border-radius: 8px;
-  padding: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-.logout__btn a {
-  text-decoration: none;
-  color: #ff6b6b;
-  font-weight: 500;
-}
-
-.logout__btn:hover {
-  background: #af3741;
+  border-radius: 6px;
 }
 
 .dashboard {
   flex: 1;
-  padding: 30px 40px;
-  background: #1f2430;
-  padding: 20px;
+  padding: 24px;
 }
 
 .dashboard__header {
-  margin-bottom: 25px;
-}
-
-.dashboard__title {
-  font-size: 28px;
-  font-weight: 600;
-}
-
-.table__container {
-  background: #151820;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
-  background: rgb(75, 72, 72);
-  border-radius: 14px;
-  padding: 20px;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table thead {
-  background: #1f2430;
-}
-
-.table th {
-  text-align: left;
-  padding: 14px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #bfbfbf;
-}
-
-.table td {
-  padding: 14px;
-  font-size: 14px;
-  border-top: 1px solid #222836;
-}
-
-.table tbody tr {
-  transition: background 0.2s;
-}
-
-.table tbody tr:hover {
-  background: #1b202b;
-}
-
-.table td:last-child {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.table button {
-  padding: 6px 12px;
+#addCartBtn {
+  height: 44px;
+  padding: 0 16px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  background: #fff;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #f1f5f9;
+  padding: 14px;
+}
+
+td {
+  padding: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.actions button {
+  height: 44px;
+  padding: 0 16px;
+  font-size: 14px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  font-size: 13px;
-  background: #2a3140;
-  color: #ffffff;
 }
 
-.table button:hover {
-  background: #3a4357;
+.edit {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.delete {
+  background: #ef4444;
+  color: #fff;
 }
 
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 100;
+  align-items: center;
 }
 
 .hidden {
@@ -164,56 +129,19 @@ body {
 
 .modal-box {
   width: 360px;
-  background: #151820;
-  border-radius: 14px;
+  background: #fff;
   padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.modal-box h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: 600;
+  border-radius: 10px;
 }
 
 .modal-box input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: none;
-  background: #1f2430;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 12px;
+  padding: 0 10px;
+}
+
+a{
+  text-decoration: none;
   color: white;
-  outline: none;
-}
-
-.modal-box input:focus {
-  outline: 1px solid #f5c518;
-}
-
-.modal-box button {
-  margin-top: 8px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-#saveCart {
-  background: #f5c518;
-  color: #000;
-}
-
-#saveCart:hover {
-  background: #e0b516;
-}
-
-#close {
-  background: #2a3140;
-  color: #fff;
-}
-
-#close:hover {
-  background: #3a4357;
 }

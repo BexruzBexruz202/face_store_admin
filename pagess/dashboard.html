@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../styles/dashboard.css" />
-  </head>
-  <body>
-    <div class="layout">
-      <aside class="sidebar">
-        <h2 class="logo">Admin</h2>
-        <ul class="menu">
-          <li><a href="../pagess/users.html">Users</a></li>
-          <li id="productsBtn">Products</li>
-          <li class="cartsBtn"><a href="../pagess/carts.html">Carts</a></li>
-        </ul>
-        <button class="logout">Logout</button>
-      </aside>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Store Admin - Dashboard</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2 class="logo">Admin</h2>
+      <ul class="sidebar__ul">
+        <li><a href="users.html">Users</a></li>
+        <li><a href="dashboard.html">Products</a></li>
+        <li><a href="carts.html">Carts</a></li>
+      </ul>
+      <button class="logout__btn">Logout</button>
+    </aside>
 
-      <main class="main">
-        <header class="topbar">
-          <h1>Products</h1>
-          <button id="addProductBtn">+ Add Product</button>
-        </header>
+    <main class="main">
+      <header class="topbar">
+        <h1>Products</h1>
+        <button id="addProductBtn">+ Add Product</button>
+      </header>
 
-        <section class="content">
+      <section class="content">
+        <div class="table__container">
           <table>
             <thead>
               <tr>
@@ -35,20 +37,22 @@
             </thead>
             <tbody id="productList"></tbody>
           </table>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+    </main>
+  </div>
 
-    <div class="modal hidden" id="modal">
-      <div class="modal-box">
-        <h3 id="modalTitle">Add Product</h3>
-        <input type="text" id="title" placeholder="Title" />
-        <input type="number" id="price" placeholder="Price" />
-        <button id="saveProduct">Save</button>
-        <button class="close">Cancel</button>
-      </div>
+  <div class="modal hidden" id="modal">
+    <div class="modal-box">
+      <h3 id="modalTitle">Add Product</h3>
+      <input type="text" id="title" placeholder="Title">
+      <input type="number" id="price" placeholder="Price">
+      <button id="saveProduct">Save</button>
+      <button class="close">Cancel</button>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../utils/dashboard.js"></script>
-  </body>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../utils/dashboard.js"></script>
+</body>
 </html>

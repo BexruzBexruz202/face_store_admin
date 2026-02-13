@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: Inter, Arial, sans-serif;
 }
 
 body {
-  background: gray;
-  color: #e6e6e6;
+  background: #f4f6f8;
 }
 
 .layout {
@@ -17,143 +16,114 @@ body {
 
 .sidebar {
   width: 240px;
-  background: black;
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  border-right: 1px solid #1f2430;
+  background: #1e293b;
+  color: #fff;
+  padding: 20px;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #f5c518;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 
-.menu {
+.sidebar__ul{
   list-style: none;
+}
+
+.sidebar__ul a {
+  height: 44px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.menu li {
-  padding: 10px 14px;
-  border-radius: 8px;
-  color: #cfcfcf;
-  cursor: pointer;
-}
-
-.menu li a {
-  color: inherit;
+  align-items: center;
+  padding: 0 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  color: #cbd5e1;
   text-decoration: none;
 }
 
-.menu li:hover {
-  background: #1f2430;
-  color: #ffffff;
+.sidebar__ul a:hover {
+  background: #334155;
+  color: #fff;
 }
 
-.logout {
-  margin-top: auto;
+.logout__btn {
+  margin-top: 30px;
+  width: 100%;
+  height: 44px;
+  background: #ef4444;
+  color: #fff;
   border: none;
-  background: red;
-  border-radius: 8px;
-  padding: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-.logout:hover {
-  background: #af3741;
+  border-radius: 6px;
 }
 
 .main {
   flex: 1;
-  padding: 30px 40px;
-  background: #1f2430;
+  padding: 24px;
 }
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
-}
-
-.topbar h1 {
-  font-size: 28px;
-  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 #addProductBtn {
-  background: #f5c518;
+  height: 44px;
+  padding: 0 16px;
+  background: #3b82f6;
+  color: #fff;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-#addProductBtn:hover {
-  background: #e0b516;
-}
-
-.content {
-  background: rgb(82, 79, 79);
-  border-radius: 14px;
-  padding: 20px;
+  border-radius: 6px;
 }
 
 table {
   width: 100%;
+  background: #fff;
   border-collapse: collapse;
-}
-
-thead {
-  background: #1f2430;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th {
-  text-align: left;
+  background: #f1f5f9;
   padding: 14px;
-  font-size: 14px;
-  color: #bfbfbf;
 }
 
 td {
   padding: 14px;
-  border-top: 1px solid #222836;
-  font-size: 14px;
+  border-top: 1px solid #e5e7eb;
 }
 
-tbody tr:hover {
-  background: #1b202b;
-}
-
-td:last-child {
+.actions {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
-table button {
-  background: #2a3140;
-  border: none;
-  color: #fff;
-  padding: 6px 12px;
+.edit,
+.delete {
+  height: 44px;
+  padding: 0 16px;
+  font-size: 14px;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
 }
 
-table button:hover {
-  background: #3a4357;
+.edit {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.delete {
+  background: #ef4444;
+  color: #fff;
 }
 
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,48 +134,20 @@ table button:hover {
 }
 
 .modal-box {
-  background: #151820;
-  padding: 24px;
-  border-radius: 14px;
   width: 360px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.modal-box h3 {
-  font-size: 20px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
 }
 
 .modal-box input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: none;
-  background: #1f2430;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 12px;
+  padding: 0 10px;
+}
+
+a{
+  text-decoration: none;
   color: white;
-}
-
-.modal-box button {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-#saveProduct {
-  background: #f5c518;
-  color: #000;
-}
-
-#saveProduct:hover {
-  background: #e0b516;
-}
-
-.close {
-  background: #2a3140;
-  color: white;
-}
-
-.close:hover {
-  background: #3a4357;
 }
